@@ -4,6 +4,7 @@ import pymysql,cryptography
 import pandas as pd
 
 def create_barchart():
+    st.markdown("### Numero di lezioni per slot di tempo")
     query = "SELECT Giorno, OraInizio, Durata, COUNT(*) AS NLezioni FROM programma GROUP BY Giorno, OraInizio, Durata;"
     result = execute_query(st.session_state["connection"], query)
     df = pd.DataFrame(result)
@@ -11,6 +12,7 @@ def create_barchart():
     st.bar_chart(df, x="GiornoOra", y="NLezioni", use_container_width=True)
 
 def create_areachart():
+    st.markdown("### Numero di lezioni per giorno")
     query = "SELECT Giorno, COUNT(*) AS NLezioni FROM programma GROUP BY Giorno;"
     result = execute_query(st.session_state["connection"], query)
     df = pd.DataFrame(result)
