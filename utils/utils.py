@@ -23,6 +23,7 @@ def check_connection():
         if connection is not False:
             st.session_state["connection"] = connection
         else:
+            st.session_state["connection"]=False
             st.sidebar.error("Errore di connessione", icon="🔴")
 
     if st.session_state["connection"]:
