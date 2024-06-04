@@ -9,13 +9,12 @@ def create_query_tipo(tipo):
         query += f"Tipo = '{el}' OR "
     return query
 
+
 def create_query_where(cod_corsi):
     query = ""
     for el in cod_corsi:
         query += f"CodC = '{el}' OR "
     return query
-
-
 
 
 def create_metrics():
@@ -31,6 +30,7 @@ def create_metrics():
         result = execute_query(st.session_state["connection"], query)
         result_dict =[dict(zip(result.keys(), r)) for r in result]
         st.metric("Tipo di corsi", result_dict[0]["NTipi"])
+
 
 def filtraggio_corsi():
     with st.expander("Filtri", expanded=True):
@@ -52,6 +52,7 @@ def filtraggio_corsi():
     df = pd.DataFrame(result)
     st.dataframe(df, use_container_width=True)
     return df
+
 
 def info_programma(df):
     cod_corsi = []
