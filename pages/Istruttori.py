@@ -36,4 +36,6 @@ def filtra_istruttori():
 
 if __name__=="__main__":
     if check_connection():
+        st.header(":red[Informazioni sugli istruttori]")
+        st.subheader("Cerca gli istruttori in base al cognome o alla data di nascita: ")
         filtra_istruttori()

@@ -25,8 +25,11 @@ if __name__ == "__main__":
         initial_sidebar_state="expanded"
     )
 
-    st.markdown("# :red[Quaderno 4] - :blue[Basi di Dati]")
-    st.markdown("#### Gabriele Barbero - 306989 ")
+    col1, col2 = st.columns(2)
+    col1.markdown("# :red[Quaderno 4] - :blue[Basi di Dati]")
+    col2.markdown("# Gabriele Barbero - 306989 ")
+    st.write("")
+    st.header(":red[Statistiche sulle lezioni]")
 
     if check_connection():
         create_barchart()

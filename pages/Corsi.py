@@ -72,6 +72,8 @@ def info_programma(df):
 
 if __name__=="__main__":
     if check_connection():
+        st.header(":red[Informazioni sui corsi e sui programmi]")
+        st.subheader("Filtra i corsi in base al tipo e al livello")
         create_metrics()
         df = filtraggio_corsi()
         info_programma(df)
